@@ -12,8 +12,9 @@ Yuanbin Chen received the B.S. degree in communications engineering from the Bei
 
 His current research interests are in the area of holographic MIMO, reconfigurable intelligent surface (RIS), and radio resource management (RRM) in future wireless networks. He was the recipient of the National Scholarship in 2020 and 2022. He is an IEEE Graduate Student Member.
 
-<table>
-<tr><td>Email:</td><td><a href="mailto:chen_yuanbin@163.com">chen_yuanbin@163.com</a></td></tr>
-<tr><td></td><td><a href="mailto:chenyuanbin@bupt.edu.cn">chenyuanbin@bupt.edu.cn</a></td></tr>
+<table style="border: none;">
+<tr><td style="border: none;">Email:</td><td style="border: none;"><a href="mailto:chen_yuanbin@163.com">chen_yuanbin@163.com</a></td></tr>
+<tr><td style="border: none;"></td><td style="border: none;"><a href="mailto:chenyuanbin@bupt.edu.cn">chenyuanbin@bupt.edu.cn</a></td></tr>
 </table>
+
 
