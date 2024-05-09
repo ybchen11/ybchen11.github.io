@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 #title                    : "Your Name / Site Title"
-title                    : "Yuanbin Chen"
+title                    : "Yuanbin Chen / Homepage"
 title_separator          : "-"
 name                     : &name "Your Name"
 description              : &description "personal description"
