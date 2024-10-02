@@ -9,6 +9,39 @@ layout: compress
   <head>
     {% include head.html %}
     {% include head/custom.html %}
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+
+    <!-- 引入 Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- 添加自定义样式 -->
+    <style>
+      /* 设置全局的字体为 Roboto */
+      body {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* 设置标题字体为 Montserrat */
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      /* 额外自定义的样式 */
+      p {
+        margin-bottom: 1rem;
+      }
+    </style>
+
+    
   </head>
 
   <body>
