@@ -5,12 +5,10 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
-
 {% include base_path %}
 
-{% for post in site.publications reversed %}
+{% assign papers = site.publications | sort: "date" | reverse %}
+{% for post in papers %}
+  <h3>[{{ forloop.index }}] <a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
   {% include archive-single.html %}
 {% endfor %}
