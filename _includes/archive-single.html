@@ -1,29 +1,11 @@
+{% assign index = forloop.index %}
 <article>
-  <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-  <p><strong>Authors:</strong> {{ post.authors }}</p>
-  <p><strong>Published in:</strong> <i>{{ post.venue }}</i>, {{ post.date | date: "%B %Y" }}</p>
+  <h2 id="paper-{{ index }}">[{{ index }}] {{ post.title }}</h2>
 
-  {% if post.paperurl %}
-    📄 <a href="{{ post.paperurl }}" target="_blank">[Read Full Paper]</a>
-  {% endif %}
-
-  {% if post.citation %}
-    <div class="citation-box">
-      <strong>📖 IEEE Citation:</strong>  
-      <p id="citation-{{ post.title | slugify }}">{{ post.citation }}</p>
-      <button class="copy-btn" onclick="copyCitation('{{ post.title | slugify }}')">📋 Copy Citation</button>
-    </div>
-  {% endif %}
-
-{% if post.bibtex %}
-    <div class="bibtex-box">
-        <button class="toggle-btn" onclick="toggleBibTeX('{{ post.title | slugify }}')">📂 Show BibTeX</button>
-        <div id="bibtex-container-{{ post.title | slugify }}" style="display: none;">
-            <pre id="bibtex-{{ post.title | slugify }}">{{ post.bibtex }}</pre>
-            <button class="copy-btn" onclick="copyBibTeX('{{ post.title | slugify }}')">📋 Copy BibTeX</button>
-        </div>
-    </div>
-{% endif %}
+  <p><strong>📖 IEEE Citation:</strong>  
+    {{ post.citation }}  
+    <button class="copy-btn" onclick="copyBibTeX('{{ post.title | slugify }}')">📋 Copy BibTeX</button>
+  </p>
 
   {% if post.image %}
     <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="publication-image">
