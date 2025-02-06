@@ -6,3 +6,12 @@ function copyCitation(id) {
         console.error("Failed to copy citation:", err);
     });
 }
+
+function copyBibTeX(id) {
+    const bibtexText = document.getElementById(`bibtex-${id}`).innerText;
+    navigator.clipboard.writeText(bibtexText).then(() => {
+        alert("BibTeX copied to clipboard!");
+    }).catch(err => {
+        console.error("Failed to copy BibTeX:", err);
+    });
+}
