@@ -14,9 +14,9 @@ author_profile: true
   {% assign year = post.date | date: "%Y" %}
   
   {% if year != last_year %}
-  <h2>{{ year }}</h2>
+  <h2 id="year-{{ year }}">{{ year }}</h2>
   {% assign last_year = year %}
   {% endif %}
 
-  {% include archive-single.html %}
+  {% include archive-single.html post=post %}
 {% endfor %}
