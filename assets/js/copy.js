@@ -1,18 +1,14 @@
-function copyCitation(id) {
-    const citationElement = document.getElementById(`citation-${id}`);
-    if (!citationElement) {
-        console.error("Citation element not found:", id);
-        return;
+function toggleBibTeX(id) {
+    const bibtexContainer = document.getElementById(`bibtex-container-${id}`);
+    const toggleBtn = event.target;
+
+    if (bibtexContainer.style.display === "none") {
+        bibtexContainer.style.display = "block";
+        toggleBtn.innerText = "📂 Hide BibTeX";
+    } else {
+        bibtexContainer.style.display = "none";
+        toggleBtn.innerText = "📂 Show BibTeX";
     }
-    
-    const citationText = citationElement.innerText;
-    navigator.clipboard.writeText(citationText)
-        .then(() => {
-            alert("Citation copied to clipboard!");
-        })
-        .catch(err => {
-            console.error("Failed to copy citation:", err);
-        });
 }
 
 function copyBibTeX(id) {
@@ -22,8 +18,7 @@ function copyBibTeX(id) {
         return;
     }
 
-    const bibtexText = bibtexElement.innerText;
-    navigator.clipboard.writeText(bibtexText)
+    navigator.clipboard.writeText(bibtexElement.innerText)
         .then(() => {
             alert("BibTeX copied to clipboard!");
         })
