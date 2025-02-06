@@ -15,6 +15,14 @@
     </div>
   {% endif %}
 
+  {% if post.bibtex %}
+    <div class="bibtex-box">
+      <strong>📜 BibTeX:</strong>
+      <pre id="bibtex-{{ post.title | slugify }}">{{ post.bibtex }}</pre>
+      <button class="copy-btn" onclick="copyBibTeX('{{ post.title | slugify }}')">📋 Copy BibTeX</button>
+    </div>
+  {% endif %}
+
   {% if post.image %}
     <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="publication-image">
   {% endif %}
