@@ -1,11 +1,14 @@
-{% assign index = forloop.index %}
 <article>
-  <h2 id="paper-{{ index }}">[{{ index }}] {{ post.title }}</h2>
+  <h2 id="paper-{{ forloop.index }}">[{{ forloop.index }}] {{ post.title }}</h2>
 
-  <p><strong>📖</strong>  
+  <p><strong>📖 IEEE Citation:</strong>  
     {{ post.citation }}  
     <button class="copy-btn" onclick="copyBibTeX('{{ post.title | slugify }}')">📋 Copy BibTeX</button>
   </p>
+
+  {% if post.bibtex %}
+    <pre id="bibtex-{{ post.title | slugify }}" style="display: none;">{{ post.bibtex }}</pre>
+  {% endif %}
 
   {% if post.image %}
     <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="publication-image">
