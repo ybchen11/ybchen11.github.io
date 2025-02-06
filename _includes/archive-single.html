@@ -1,15 +1,14 @@
 <article>
   <h2 id="paper-{{ forloop.index }}">[{{ forloop.index }}] {{ post.title }}</h2>
 
-  <p><strong>📖</strong>  
+  <p>
     {{ post.citation }}  
     <button class="copy-btn" onclick="copyBibTeX('{{ post.date | date: "%Y%m%d" }}')">📋 Copy BibTeX</button>
   </p>
 
-{% if post.bibtex %}
+  {% if post.bibtex %}
     <pre id="bibtex-{{ post.date | date: '%Y%m%d' }}" style="display: none;">{{ post.bibtex }}</pre>
-{% endif %}
-
+  {% endif %}
 
   {% if post.image %}
     <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="publication-image">
