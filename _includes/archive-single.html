@@ -2,7 +2,7 @@
   <h2 id="paper-{{ forloop.index }}">[{{ forloop.index }}] {{ post.title }}</h2>
 
   <p>
-    {{ post.citation }}  
+    {{ post.citation | replace: "Y. Chen", "<strong>Y. Chen</strong>" }}
     <button class="copy-btn" onclick="copyBibTeX('{{ post.date | date: "%Y%m%d" }}')">📋 Copy BibTeX</button>
   </p>
 
