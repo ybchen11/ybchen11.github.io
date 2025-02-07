@@ -7,6 +7,34 @@
     {% include head.html %}
 
     <style>
+        /* 页面布局 */
+        .container {
+            display: flex;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        /* 侧边栏 - 头像 + 个人信息 */
+        .sidebar {
+            flex: 1;
+            max-width: 300px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .sidebar img {
+            max-width: 100%;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        /* 主要内容 */
+        .main-content {
+            flex: 2;
+            padding: 20px;
+        }
+
         /* 主页标题 - 学术风格 */
         .bio-title {
             font-family: "Playfair Display", "Georgia", serif;
@@ -17,50 +45,32 @@
             margin-bottom: 15px;
         }
 
-        /* 个人简介 - 阅读体验优化 */
+        /* 个人简介 - 美化阅读体验 */
         .bio-text {
             font-family: "Merriweather", "Georgia", serif;
             font-size: 18px;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
-            margin: 0 auto;
             text-align: justify;
         }
 
-        /* Email 样式 - 让邮箱更醒目 */
+        /* Email 样式 */
         .bio-email {
             font-weight: bold;
-            background-color: #f8f9fa; /* 浅灰色背景 */
+            background-color: #f8f9fa;
             padding: 6px 12px;
             border-radius: 6px;
             display: inline-block;
             font-family: "Lora", "Georgia", serif;
             font-size: 16px;
-            color: #007bff; /* 让 Email 变成蓝色 */
+            color: #007bff;
             text-decoration: none;
             transition: background-color 0.3s, color 0.3s;
         }
 
-        /* 鼠标悬停时让 Email 更突出 */
         .bio-email:hover {
-            background-color: #e8f0fe; /* 浅蓝色 */
+            background-color: #e8f0fe;
             color: #0056b3;
-        }
-
-        /* 容器样式 */
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
-        /* 页脚样式 */
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            color: #666;
         }
     </style>
 </head>
@@ -69,15 +79,38 @@
         {% include nav.html %}
     </header>
 
-    <main class="container">
-        <h1 class="bio-title">{{ site.author.name }} ({{ site.author.name_cn }})</h1>
-        <div class="bio-text">
-            {{ content }}
-        </div>
-        <p style="text-align: center;"><strong>Email:</strong> 
-            <a class="bio-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
-        </p>
-    </main>
+    <div id="main" role="main" class="container">
+        <!-- 侧边栏（头像 + 个人信息） -->
+        <aside class="sidebar">
+            <img src="{{ site.author.avatar | relative_url }}" alt="Profile Picture">
+            <h2>{{ site.author.name }} ({{ site.author.name_cn }})</h2>
+            <p>📍 {{ site.author.location }}</p>
+            <p><a href="{{ site.author.scholar }}">Google Scholar</a></p>
+            <p><a href="{{ site.author.orcid }}">ORCID</a></p>
+        </aside>
+
+        <!-- 主要内容（个人简介） -->
+        <section class="main-content">
+            {% if page.title %}
+            <h1 class="bio-title">{{ page.title }}</h1>
+            {% endif %}
+
+            <div class="bio-text">
+                {{ content }}
+            </div>
+
+            {% if page.citation and page.paperurl %}
+                <p style="font-size: smaller">Recommended citation: {{ page.citation }} <a href="{{ page.paperurl }}"><u>{{ page.paperurl }}</u></a></p>
+            {% elsif page.citation %}
+                <p style="font-size: smaller">Recommended citation: {{ page.citation }}</p>
+            {% endif %}
+
+            <!-- Email -->
+            <p style="text-align: center;"><strong>Email:</strong> 
+                <a class="bio-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+            </p>
+        </section>
+    </div>
 
     <footer>
         {% include footer.html %}
