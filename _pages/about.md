@@ -2,7 +2,6 @@
 permalink: /
 title: "Yuanbin Chen's Personal Page"
 author_profile: true
-# layout: home  # 这里让主页单独使用 `home.html`
 
 redirect_from:
   - /about/
