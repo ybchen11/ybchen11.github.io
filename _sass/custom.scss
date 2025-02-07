@@ -1,7 +1,36 @@
-/* 主页和 About 页面字体优化 */
+/* 让主页标题更有学术感 */
+.bio-title {
+    font-family: "Playfair Display", "Georgia", serif;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+/* 让个人简介的字体更优雅 */
 .bio-text {
     font-family: "Merriweather", "Georgia", serif;
     font-size: 18px;
     line-height: 1.6;
     color: #333;
+}
+
+/* 让 Email 更醒目 */
+.bio-email {
+    font-weight: bold;
+    background-color: #f8f9fa; /* 浅灰色背景 */
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    font-family: "Lora", "Georgia", serif;
+    font-size: 16px;
+    color: #007bff; /* 让 Email 变成蓝色 */
+    text-decoration: none;
+}
+
+/* 鼠标悬停时让 Email 更突出 */
+.bio-email:hover {
+    background-color: #e8f0fe; /* 浅蓝色 */
+    color: #0056b3; /* 深蓝色 */
 }
