@@ -24,9 +24,9 @@ author:
   # Biographic information
   avatar           : "yuanbin_in_Dubai.png"
   name             : "Yuanbin Chen\n(陈源彬)"
-  <\br>
   # pronouns         : # example: "she/her"  
   # bio              : "Short biography for the left-hand sidebar"
+  <\br>
   location         : "Singapore"
   #employer         : "Red Brick University"
   uri              : # URL
@@ -58,7 +58,7 @@ author:
   #keybase          : # Username
   instagram        : jeff_chan1030
   #lastfm           : # Username
-  linkedin         : https://www.linkedin.com/in/yuanbin-chen/
+  linkedin         : yuanbin-chen
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
