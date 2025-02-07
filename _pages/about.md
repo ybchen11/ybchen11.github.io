@@ -2,6 +2,7 @@
 permalink: /
 title: "Yuanbin Chen's Personal Page"
 author_profile: true
+layout: home  # 让主页使用 home.html
 
 redirect_from:
   - /about/
