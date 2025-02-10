@@ -33,4 +33,12 @@
 .bio-email:hover {
     background-color: #e8f0fe; /* 浅蓝色 */
     color: #0056b3; /* 深蓝色 */
+
+.nav__list ul li:first-child a::before {
+    content: "Yuanbin's Homepage" !important;
+    visibility: visible !important;
+    color: #222;
+}
+
+    
 }
