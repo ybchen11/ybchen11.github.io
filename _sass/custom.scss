@@ -34,11 +34,29 @@
     background-color: #e8f0fe; /* 浅蓝色 */
     color: #0056b3; /* 深蓝色 */
 
-.nav__list ul li:first-child a::before {
+/* 强制修改导航栏的第一个菜单项 */
+.masthead__menu-item a {
+    font-weight: bold;
+    color: red !important;  /* 先测试颜色是否生效 */
+}
+
+/* 如果字体变红，说明选择器正确，可以改成这个 */
+.masthead__menu-item a::before {
     content: "Yuanbin's Homepage" !important;
     visibility: visible !important;
     color: #222;
 }
+
+/* 隐藏原本的 Home 文字 */
+.masthead__menu-item a {
+    font-size: 0;
+}
+
+/* 让新标题可见 */
+.masthead__menu-item a::before {
+    font-size: 16px;
+}
+
 
     
 }
